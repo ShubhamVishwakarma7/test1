@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Log In</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet"
+        href="{{ url_for('static' , filename='signup/fonts/material-icon/css/material-design-iconic-font.min.css') }}">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{{ url_for('static' , filename='signup/css/style.css') }}">
+</head>
+
+<body>
+
+
+
+
+
+
+    <section class="sign-in">
+
+        <div class="container">
+            {% with messages = get_flashed_messages( with_categories=true) %}
+            {% if messages %}
+            {% for category , message in messages %}
+
+            <div class="alert alert-{{ category}} ">{{message}}</div>
+
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+
+            <div class="signin-content">
+
+
+
+
+                <div class="signin-form">
+                    <h2 class="form-title">Log In</h2>
+                    <form method="post" action="/login" class="register-form" id="login-form">
+                        {{ form.hidden_tag() }}
+                        <div class="form-group">
+                            <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            {% if form.email.errors %}
+                            {{ form.email(class="form-control ",placeholder="email")}}
+
+                            {% for error in form.email.errors %}
+                            <span style="color: red;">{{error}}</span>
+                            {% endfor %}
+
+
+                            {% else %}
+                            {{ form.email(class="form-control ",placeholder="email")}}
+                            {% endif %}
+
+
+                        </div>
+                        <div class="form-group">
+                            <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                            {% if form.password.errors %}
+                            {{ form.password(class="form-control form-control-lg is-invalid",placeholder="password")}}
+
+                            {% for error in form.password.errors %}
+                            <span style="color: red;">{{error}}</span>
+                            {% endfor %}
+                            {% else %}
+                            {{ form.password(class="form-control " ,placeholder="password")}}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ form.remember(class="form-check-input", id="remember-me" )}}
+                            <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember
+                                me</label>
+                        </div>
+                        <div class="form-group form-button">
+                            {{ form.submit(class="btn btn-primary")}}
+                        </div>
+
+                        <div><span>If not registered . <a href="{{url_for('signup')}}" style="color: red;">Sign up
+                                    here</a> </span></div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>

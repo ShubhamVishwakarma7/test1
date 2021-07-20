@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Contact V11</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{{ url_for('static' , filename='images4/icons/favicon.ico') }}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='vendor4/bootstrap/css/bootstrap.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='fonts4/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='fonts4/Linearicons-Free-v1.0.0/icon-font.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='vendor4/animate/animate.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='vendor4/css-hamburgers/hamburgers.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='vendor4/select2/select2.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='css4/util.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='css4/main.css') }}">
+<!--===============================================================================================-->
+</head>
+<body>
+
+
+	<div class="container-contact100" style="background-image: url('{{ url_for('static' , filename='images4/bg-01.jpg') }}');">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" action="/editservice/{{sno}}"  method="post">
+				<span class="contact100-form-title">
+					Edit Service
+				</span>
+
+				
+
+<!--
+				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Name is required">
+					<h4 class="label-input100">Serial Number*</h4>
+					<input class="input100" type="integer" name="sno" id="sno" placeholder="Enter Serial Number">
+				</div>
+
+-->				
+
+
+
+				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<span class="label-input100">Title*</span>
+					<input class="input100" type="text" name="title" id="title" placeholder="Enter Title" value="{{service.title}}">
+				</div>
+
+				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Name is required">
+					<h4 class="label-input100">Service Icon*</h4>
+					<input class="input100" type="integer" name="icon" id="icon" placeholder="Enter icon name" value="{{service.icon}}">
+				</div>
+
+				
+
+
+
+				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<span class="label-input100">Icon color*</span>
+					<input class="input100" type="text" name="color" id="color" placeholder="Enter Hexadecimal value with  # " value="{{service.color}}">
+				</div>
+
+
+				
+
+
+				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Name is required">
+					<h4 class="label-input100">Slug*</h4>
+					<input class="input100" type="integer" name="slug" id="slug" placeholder="Enter Service slug" value="{{service.slug}}">
+				</div>
+
+				
+
+
+<!--
+				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<span class="label-input100">Date*</span>
+					<input class="input100" type="text" name="date" id="date" placeholder="Enter Date">
+				</div>
+
+-->				
+
+
+				<div class="wrap-input100 validate-input" data-validate = "Message is required">
+					<span class="label-input100">Description*</span>
+					<textarea class="input100" name="description" id="description" placeholder="Enter Description..."> {{service.description}}</textarea>
+				</div>
+
+				
+
+
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn">
+							Submit
+						</button>
+					</div>
+				</div>
+			
+
+
+
+
+			</form>
+		</div>
+
+		<span class="contact100-more">
+				Call us on +91-7470692361
+		</span>
+	</div>
+
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src="{{ url_for('static' , filename='vendor4/jquery/jquery-3.2.1.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static' , filename='vendor4/bootstrap/js/popper.js') }}"></script>
+	<script src="{{ url_for('static' , filename='vendor4/bootstrap/js/bootstrap.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static' , filename='vendor4/select2/select2.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static' , filename='js4/main.js') }}"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+</body>
+</html>

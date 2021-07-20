@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Contact V11</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="{{ url_for('static' , filename='images4/icons/favicon.ico') }}" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static' , filename='vendor4/bootstrap/css/bootstrap.min.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static' , filename='fonts4/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static' , filename='fonts4/Linearicons-Free-v1.0.0/icon-font.min.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='vendor4/animate/animate.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static' , filename='vendor4/css-hamburgers/hamburgers.min.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='vendor4/select2/select2.min.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='css4/util.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='css4/main.css') }}">
+    <!--===============================================================================================-->
+</head>
+
+<body>
+
+
+    <div class="container-contact100"
+        style="background-image: url('{{ url_for('static' , filename='images4/bg-01.jpg') }}');">
+        <div class="wrap-contact100">
+            <form class="contact100-form validate-form" action="/editserviceman/{{id}}" method="post">
+                <span class="contact100-form-title">
+                    Edit Serviceman
+                </span>
+
+
+
+
+                <div class="wrap-input100 rs1-wrap-input100 validate-input"
+                    data-validate="Valid email is required: ex@abc.xyz">
+                    <span class="label-input100">Name</span>
+                    <input class="input100" type="text" name="name" id="name" placeholder="Enter Name"
+                        value="{{serviceman.name}}">
+                </div>
+
+
+                <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Name is required">
+                    <h4 class="label-input100">Description</h4>
+                    <input class="input100" type="text" name="description" id="description"
+                        placeholder="Enter description here" value="{{serviceman.description}}">
+                </div>
+
+
+                <div class="wrap-input100 rs1-wrap-input100 validate-input"
+                    data-validate="Valid email is required: ex@abc.xyz">
+                    <span class="label-input100">Status</span>
+                    <input class="input100" type="text" name="status" id="status" placeholder="Active or Not  "
+                        value="{{serviceman.status}}">
+                </div>
+
+
+                <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Name is required">
+                    <h4 class="label-input100">Phone</h4>
+                    <input class="input100" type="integer" name="phone" id="phone" placeholder="Enter Phone Number Here"
+                        value="{{serviceman.phone}}">
+                </div>
+
+
+                <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Name is required">
+                    <h4 class="label-input100">Adhar Number</h4>
+                    <input class="input100" type="integer" name="adhar_no" id="adhar_no" placeholder="Enter Phone Number Here"
+                        value="{{serviceman.adhar_no}}">
+                </div>
+
+
+                <div class="wrap-input100 rs1-wrap-input100 validate-input"
+                    data-validate="Valid email is required: ex@abc.xyz">
+                    <span class="label-input100">address</span>
+                    <input class="input100" type="text" name="address" id="address" placeholder="Enter Address"
+                    value="{{serviceman.address}}" >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="exampleFormControlFile1">Example file input</label>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                  </div>
+
+
+                
+
+                <div class="container-contact100-form-btn">
+                    <div class="wrap-contact100-form-btn">
+                        <div class="contact100-form-bgbtn"></div>
+                        <button class="contact100-form-btn">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+
+
+
+
+
+            </form>
+        </div>
+
+        <span class="contact100-more">
+            Call us on +91-7470692361
+        </span>
+    </div>
+
+
+
+    <div id="dropDownSelect1"></div>
+
+    <!--===============================================================================================-->
+    <script src="{{ url_for('static' , filename='vendor4/jquery/jquery-3.2.1.min.js') }}"></script>
+    <!--===============================================================================================-->
+    <script src="{{ url_for('static' , filename='vendor4/bootstrap/js/popper.js') }}"></script>
+    <script src="{{ url_for('static' , filename='vendor4/bootstrap/js/bootstrap.min.js') }}"></script>
+    <!--===============================================================================================-->
+    <script src="{{ url_for('static' , filename='vendor4/select2/select2.min.js') }}"></script>
+    <!--===============================================================================================-->
+    <script src="{{ url_for('static' , filename='js4/main.js') }}"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-23581568-13');
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <style >
+    .logoco1{
+      color: white;
+      font-family:'Amita';
+      
+    }
+  </style>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Contact</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{ url_for('static' , filename='assets/img/fav.png') }}" rel="icon">
+  <link href="{{ url_for('static' , filename='assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+<link href='https://fonts.googleapis.com/css?family=Amita' rel='stylesheet'>
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static' , filename='assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static' , filename='assets/vendor/icofont/icofont.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static' , filename='assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static' , filename='assets/vendor/venobox/venobox.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static' , filename='assets/vendor/line-awesome/css/line-awesome.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static' , filename='assets/vendor/owl.carousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static' , filename='assets/vendor/aos/aos.css') }}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{ url_for('static' , filename='assets/css/style.css') }}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Serenity - v2.1.0
+  * Template URL: https://bootstrapmade.com/serenity-bootstrap-corporate-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top-1" style="background-color: black;">
+    <div class="container d-flex">
+
+      <div class="logo mr-auto">
+        <h1 class="logoco1" style="color: rgb(60, 228, 60);">Repair Me</h1>
+
+
+
+
+
+        <!-- 
+        <img src="{{ url_for('static' , filename='assets/img/logo.png') }}" alt="" class="img-fluid" >
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+
+
+      </div>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li><a href="/">Home</a></li>
+          
+
+          {% if current_user.is_authenticated %}
+
+          <li><a href="{{ url_for('account')}}">Account</a></li>
+          <li><a href="{{ url_for('userlogout')}}">Log Out</a></li>
+
+
+          {% else %}
+
+          <li><a href="{{ url_for('signup')}}">Sign Up</a></li>
+          <li><a href="{{ url_for('login')}}">Log In</a></li>
+          {% endif %}
+          <li ><a href="{{ url_for('about')}}">About</a></li>
+          <li class="active" ><a href="{{ url_for('about')}}">Contact</a></li>
+
+
+          <!--
+          <li class="get-started"><a href="/dashboard">Dashboard</a></li>
+          -->
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="breadcrumb-hero">
+        <div class="container">
+          <div class="breadcrumb-hero">
+            <br>
+            <h2>Contact</h2>
+            <p>Repair Me is a  digital platform for local services in Rewa. Repair Me focuses on expert services 
+              clustered around Home, Life and Self and where the user need is customized. Using technology and 
+              domain intelligence, the platform seeks to understand the user need in detail and matches it to 
+              verified service professionals. </p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li>Contact</li>
+        </ol>
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div>
+          <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="row mt-5">
+
+          <div class="col-lg-4" data-aos="fade-right">
+            <div class="info">
+              <div class="address">
+                <i class="icofont-google-map"></i>
+                <h4>Location:</h4>
+                <p>Nipaniya, Rewa, Madhy Pradesh</p>
+              </div>
+
+              <div class="email">
+                <i class="icofont-envelope"></i>
+                <h4>Email:</h4>
+                <p>contact@repairmeshop.in</p>
+              </div>
+
+              <div class="phone">
+                <i class="icofont-phone"></i>
+                <h4>Call:</h4>
+                <p>8349050289</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left">
+
+            
+
+
+
+
+<!-- FORM SECTION -->
+
+
+
+
+
+
+
+
+
+            <form action="/contact" method="post" role="form" class="php-email-form" novalidate >
+              
+
+              <div class="form-row">
+                
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"  data-msg="Please enter at least 4 chars" required/>
+                  <div class="validate"></div>
+                </div>
+                
+                
+
+
+
+
+                <div class="col-md-6 form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validate"></div>
+                </div>
+              
+              </div>
+             
+
+
+              
+
+
+
+
+
+              <div class="form-group">
+                <input type="Number" class="form-control" name="phone" id="phone" placeholder="Phone Number"  data-msg="Please enter at least 8 chars of subject" />
+                <div class="validate"></div>
+              </div>
+
+              
+
+
+
+
+
+
+
+
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"  data-msg="Please enter at least 8 chars of subject" />
+                <div class="validate"></div>
+              </div>
+              
+
+              <div class="form-group">
+                <textarea class="form-control" name="message" id="message" rows="5"  data-msg="Please write something for us" placeholder="Message"></textarea>
+                <div class="validate"></div>
+              </div>
+              
+
+
+              <div class="mb-3">
+                <div class="loading">Loading</div>
+                
+              </div>
+              
+
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+
+          
+
+
+
+
+
+
+
+<!-- FORM SECTION CLOSE -->
+
+
+
+
+
+
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>FixallNow</h3>
+            <p>FixallNow is a  digital platform for local services in Rewa. FixallNow focuses on expert services clustered around Home, Life and Self and where the user need is customized. Using technology and domain intelligence, the platform seeks to understand the user need in detail and matches it to verified service professionals.</p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About us</a></li>
+              <li><a href="/services">Services</a></li>
+              <li><a href="/terms">Terms of service</a></li>
+              <li><a href="/privacy">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              Nipaniya <br>
+              Madhya Pradesh, zip code : 486001<br>
+              India <br>
+              <strong>Phone:</strong> +91-8349050289<br>
+              <strong>Email:</strong> contact@repairmeshop.in<br>
+            </p>
+
+            <div class="social-links">
+              <a href="https://m.facebook.com/FixallNow-107195324463074/" class="twitter" target="_blank"><i class="icofont-facebook"></i></a>
+              <a href="https://instagram.com" class="facebook" target="_blank"><i class="icofont-instagram"></i></a>
+              <a href=" https://wa.me/+917470692361?text=Hello!%20my%20name%20is%20..." class="instagram" target="_blank"><i class="icofont-whatsapp"></i></a>
+              <a href="https://twitter.com" class="google-plus" target="_blank"><i class="icofont-twitter"></i></a>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Subscribe for latest updates.</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>FixallNow</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/serenity-bootstrap-corporate-template/ -->
+        Designed by <a href="https://facebook.com" target="_blank">Shubham Vishwakarma</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static' , filename='assets/vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static' , filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static' , filename='assets/vendor/jquery.easing/jquery.easing.min.js') }}"></script>
+  <script src="{{ url_for('static' , filename='assets/vendor/php-email-form/validate.js') }}"></script>
+  <script src="{{ url_for('static' , filename='assets/vendor/waypoints/jquery.waypoints.min.js') }}"></script>
+  <script src="{{ url_for('static' , filename='assets/vendor/counterup/counterup.min.js') }}"></script>
+  <script src="{{ url_for('static' , filename='assets/vendor/venobox/venobox.min.js') }}"></script>
+  <script src="{{ url_for('static' , filename='assets/vendor/owl.carousel/owl.carousel.min.js') }}"></script>
+  <script src="{{ url_for('static' , filename='assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static' , filename='assets/vendor/aos/aos.js') }}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{ url_for('static' , filename='assets/js/main.js') }}"></script>
+
+</body>
+
+</html>

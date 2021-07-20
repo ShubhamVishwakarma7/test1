@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!--#####################################   META DATA   ########################################################-->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta charset="UTF-8">
+
+	<!-- ######################################   LINKS    ########################################################### -->
+	<link rel="stylesheet" href="/style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+	<link rel="icon" type="image/png" href="{{ url_for('static' , filename='images3/icons/favicon.ico') }}" />
+
+	<link rel="stylesheet" type="text/css"
+		href="{{ url_for('static' , filename='vendor3/bootstrap/css/bootstrap.min.css') }}">
+
+	<link rel="stylesheet" type="text/css"
+		href="{{ url_for('static' , filename='fonts3/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='vendor3/animate/animate.css') }}">
+
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='vendor3/select2/select2.min.css') }}">
+
+	<link rel="stylesheet" type="text/css"
+		href="{{ url_for('static' , filename='vendor3/perfect-scrollbar/perfect-scrollbar.css') }}">
+
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='css3/util.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='css3/main.css') }}">
+
+	<title>dashboard</title>
+	<style>
+		.btnd {
+			background-color: #4CAF50;
+			/* Green */
+			border: none;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			border-radius: 40px;
+		}
+
+		body{
+			background-color:rgb(47, 150, 182);
+		}
+	</style>
+</head>
+
+<body>
+	<div class="limiter" style="background-color: violet;">
+		<div class="container-table100" style="background-color: rgb(36, 145, 179);">
+			<div class="wrap-table100">
+
+				
+				<a href="/"><button class="btnd">Home</button></a>
+				<a href="/logout"><button class="btnd bg-danger">Logout</button></a>
+
+				<hr>
+
+				<!-- ##############################################   \\\\   REQUEST TABLE   ///   ####################################-->
+
+				<h1 style="font-family: serif; color: rgb(12, 12, 11)7);">REQUEST TABLE</h1>
+				<div class="table100 ver3 m-b-110">
+					<div class="table100-head" style="background-color: rgb(24, 122, 187)" >
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1" style="color: rgb(244, 246, 247);">sno</th>
+									<th class="cell100 column2" style="color: white;">name</th>
+									<th class="cell100 column3" style="color: white;">email</th>
+									<th class="cell100 column4" style="color: white;">phone number</th>
+									<th class="cell100 column5" style="color: white;">service</th>
+									<th class="cell100 column5" style="color: white;">category</th>
+									<th class="cell100 column5" style="color: white;">status</th>
+									<th class="cell100 column5" style="color: white;">Serviceman</th>
+									<th class="cell100 column1" style="color: white;">area</th>
+									<th class="cell100 column2" style="color: white;">location</th>
+									<th class="cell100 column3" style="color: white;">date</th>
+									<th class="cell100 column4" style="color: white;">service date</th>
+									<th class="cell100 column5" style="color: white;">service time</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+								{% for bookservice in bookservices %}
+								<tr class="row100 body">
+									<td class="cell100 column1">{{bookservice.sno}}</td>
+									<td class="cell100 column2">{{bookservice.name}}</td>
+									<td class="cell100 column3">{{bookservice.email}}</td>
+									<td class="cell100 column4">{{bookservice.phone}}</td>
+									<td class="cell100 column5">{{bookservice.service}}</td>
+									<td class="cell100 column6">{{bookservice.category}}</td>
+									<td class="cell100 column6"> <a href="/editbookservice/{{bookservice.sno}}">{{bookservice.status}}</a> </td>
+									<td class="cell100 column1"><a href="/editbookservice/{{bookservice.sno}}">{{bookservice.serviceman}}</a></td>
+									<td class="cell100 column1">{{bookservice.area}}</td>
+									<td class="cell100 column2">{{bookservice.location}}</td>
+									<td class="cell100 column3">{{bookservice.date}}</td>
+									<td class="cell100 column4">{{bookservice.service_date}}</td>
+									<td class="cell100 column5">{{bookservice.service_time}}</td>
+								</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				
+				<!-- ##############################################   \\\\   REQUEST MANAGE TABLE   ///   ####################################-->
+<!--
+				<h1 style="font-family: serif; color: rgb(12, 12, 12);">MANAGE REQUEST </h1>
+				<div class="table100 ver2 m-b-110">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">sno</th>
+									<th class="cell100 column1">name</th>
+									<th class="cell100 column1">email</th>
+									<th class="cell100 column1">Service date</th>
+									<th class="cell100 column1">Alloted Serviceman </th>
+									
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+								{% for bookservice in bookservices %}
+								<tr class="row100 body">
+									<td class="cell100 column1">{{bookservice.sno}}</td>
+									<td class="cell100 column1">{{bookservice.name}}</td>
+									<td class="cell100 column1">{{bookservice.email}}</td>
+									<td class="cell100 column1">{{bookservice.service_date}}</td>
+									<td class="cell100 column1">{{bookservice.name}}</td>
+									
+									
+									<!--
+									<td class="cell100 column5">{{bookservice.service}}</td>
+									<td class="cell100 column6">{{bookservice.category}}</td>
+									<td class="cell100 column6"> <a
+											href="/editbookservice/{{bookservice.sno}}">{{bookservice.status}}</a>
+									</td>
+									<td class="cell100 column1">{{bookservice.area}}</td>
+									<td class="cell100 column2">{{bookservice.location}}</td>
+									<td class="cell100 column3">{{bookservice.date}}</td>									
+									<td class="cell100 column5">{{bookservice.service_time}}</td>
+									-->
+								
+								<!--
+								</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+-->
+
+
+
+<!-- ##############################################     \\\   MANAGE SERVICE   ///    #################-->
+
+<h1 style="font-family: serif; color: rgb(7, 7, 7);">SERVICES </h1>
+<a href="/editservice/0"><button class="btnd">New Service</button></a>
+<div class="table100 ver1 m-b-110">
+	<div class="table100-head">
+		<table>
+			<thead>
+				<tr class="row100 head">
+					<th class="cell100 column1">sno</th>
+					<th class="cell100 column2">title</th>
+					<th class="cell100 column3">description</th>
+					<th class="cell100 column4">icon</th>
+					<th class="cell100 column5">color</th>
+					<th class="cell100 column5">date</th>
+
+					<th class="cell100 column6">Edit</th>
+					<th class="cell100 column7">Delete</th>
+				</tr>
+			</thead>
+		</table>
+	</div>
+
+	<div class="table100-body js-pscroll">
+		<table>
+			<tbody>
+
+
+				{% for service in services %}
+
+				<tr class="row100 body">
+					<td class="cell100 column1">{{service.sno}}</td>
+					<td class="cell100 column2">{{service.title}}</td>
+					<td class="cell100 column3">{{service.description}}</td>
+					<td class="cell100 column4">{{service.icon}}</td>
+					<td class="cell100 column5">{{service.color}}</td>
+					<td class="cell100 column5">{{service.date}}</td>
+
+
+
+
+					<td class="cell100 column6"><a
+							href="/editservice/{{service.sno}}"><button style="color: #4CAF50;">Edit</button></a></td>
+					<td class="cell100 column7"><a
+							href="/delete/{{service.sno}}"><button style="color: red;">Delete</button></a></td>
+				</tr>
+
+
+				{% endfor %}
+
+
+
+
+			</tbody>
+		</table>
+	</div>
+</div>
+
+
+				
+
+				<!-- ##############################################   \\\\   SERVICEMEN TABLE   ///   ####################################-->
+
+				<h1 style="font-family: serif; color: rgb(7, 7, 7);">SERVICEMEN TABLE</h1>
+				<a href="/editserviceman/0"><button class="btnd">New Serviceman</button></a>
+				<div class="table100 ver3 m-b-110">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">id</th>
+									<th class="cell100 column2">name</th>
+									<th class="cell100 column4">service</th>
+									<th class="cell100 column4">status</th>
+									<th class="cell100 column5">phone</th>
+									<th class="cell100 column6">address</th>
+									<th class="cell100 column2">adhar No.</th>
+									<th class="cell100 column4">image</th>
+									<th class="cell100 column9">adhar img</th>
+									<th class="cell100 column6">Edit</th>
+									
+
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+								{% for serviceman in servicemen %}
+								<tr class="row100 body">
+									<td class="cell100 column1">{{serviceman.id}}</td>
+									<td class="cell100 column2">{{serviceman.name}}</td>
+									<td class="cell100 column4">{{serviceman.description}}</td>
+									<td class="cell100 column4">{{serviceman.status}}</td>
+									<td class="cell100 column5">{{serviceman.phone}}</td>
+									<td class="cell100 column6">{{serviceman.address}}</td>
+									<td class="cell100 column7">{{serviceman.adhar_no}}</td>
+									<td class="cell100 column4">{{serviceman.image}}</td>
+									<td class="cell100 column9">{{serviceman.adhar_img}}</td>
+									<td class="cell100 column6"><a
+											href="/editserviceman/{{serviceman.id}}">Edit</a></td>
+									
+
+								</tr>
+								</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				
+
+				<!-- ##############################################   \\\   CONTACT TABLE   ///   ####################################-->
+
+				<h1 style="font-family: serif; color: rgb(14, 13, 13);">CONTACT TABLE</h1>
+				<div class="table100 ver1 m-b-110">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">sno</th>
+									<th class="cell100 column2">name</th>
+									<th class="cell100 column2">phone number</th>
+									<th class="cell100 column4">Email</th>
+									<th class="cell100 column5">Subject</th>
+									<th class="cell100 column6">message</th>
+									<th class="cell100 column7">date</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+								{% for contact in contacts %}
+								<tr class="row100 body">
+									<td class="cell100 column1">{{contact.sno}}</td>
+									<td class="cell100 column2">{{contact.name}}</td>
+									<td class="cell100 column2">{{contact.phone_num}}</td>
+									<td class="cell100 column4">{{contact.email}}</td>
+									<td class="cell100 column5">{{contact.subject}}</td>
+									<td class="cell100 column6">{{contact.msg}}</td>
+									<td class="cell100 column7">{{contact.date}}</td>
+								</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<!-- ##############################################   \\\\   HOME APPLIANCES TABLE   ///   ####################################-->
+
+				<h1 style="font-family: serif; color: rgb(8, 8, 8);"> CATEGORY HOME APPLIANCES </h1>
+				<div class="table100 ver1 m-b-110">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">sno</th>
+									<th class="cell100 column2">Rank</th>
+									<th class="cell100 column3">Instruments</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+								{% for homeapp in homeapps %}
+								<tr class="row100 body">
+									<td class="cell100 column1">{{homeapp .sno}}</td>
+									<td class="cell100 column2">{{homeapp .position}}</td>
+									<td class="cell100 column3">{{homeapp .instruments}}</td>
+								</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<!-- ##############################################   \\\\   ADDITIONAL JAVA SCRIPT  ///   ####################################-->
+
+
+
+
+				<!--===============================================================================================-->
+				<script src="{{ url_for('static' , filename='vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+				<!--===============================================================================================-->
+				<script src="{{ url_for('static' , filename='vendor/bootstrap/js/popper.js') }}"></script>
+				<script src="{{ url_for('static' , filename='vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+				<!--===============================================================================================-->
+				<script src="{{ url_for('static' , filename='vendor/select2/select2.min.js') }}"></script>
+				<!--===============================================================================================-->
+				<script
+					src="{{ url_for('static' , filename='vendor/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
+				<script>
+					$('.js-pscroll').each(function () {
+						var ps = new PerfectScrollbar(this);
+
+						$(window).on('resize', function () {
+							ps.update();
+						})
+					});
+
+
+				</script>
+				<!--===============================================================================================-->
+				<script src="{{ url_for('static' , filename='js/main.js') }}"></script>
+
+
+				<!--   Core JS Files odf black dashboard  -->
+
+
+
+
+
+
+
+				<!-- end of black dashboard js flile -->
+
+
+				<!-- Optional JavaScript -->
+				<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+				<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+					integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+					crossorigin="anonymous"></script>
+				<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+					integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+					crossorigin="anonymous"></script>
+				<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+					integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+					crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    .logoco1 {
+      color: white;
+      font-family: 'Amita';
+
+    }
+  </style>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Repair Me</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href='https://fonts.googleapis.com/css?family=Amita' rel='stylesheet'>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+
+  <link href="{{ url_for('static' , filename='assets/img/fav.png') }}" rel="icon">
+  <link href="{{ url_for('static' , filename='assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static' , filename='assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static' , filename='assets/vendor/icofont/icofont.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static' , filename='assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static' , filename='assets/vendor/venobox/venobox.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static' , filename='assets/vendor/line-awesome/css/line-awesome.min.css') }}"
+    rel="stylesheet">
+  <link href="{{ url_for('static' , filename='assets/vendor/owl.carousel/assets/owl.carousel.min.css') }}"
+    rel="stylesheet">
+  <link href="{{ url_for('static' , filename='assets/vendor/aos/aos.css') }}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{ url_for('static' , filename='assets/css/style.css') }}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Serenity - v2.1.0
+  * Template URL: https://bootstrapmade.com/serenity-bootstrap-corporate-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+
+  <style>
+      /* Fixed/sticky icon bar (vertically aligned 50% from the top of the screen) */
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 10;
+  float: right;
+  
+}
+/* Style the icon bar links */
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+/* Style the social media icons with color, if you want */
+.icon-bar a:hover {
+  background-color: #000;
+}
+.facebook {
+  background: #1877F2;
+  color: white;
+}
+.whatsapp {
+  background: #25D366;
+  color: white;
+}
+.instagram {
+  background: #E1306C;
+  color: white;
+}
+.youtube {
+  background: #FF0000;
+  color: white;
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top-1" style="background-color: black;">
+    <div class="container d-flex">
+
+      <div class="logo mr-auto">
+
+        <!--
+        <h1 class="logoco1" style="color: rgb(60, 228, 60);">Repair Me</h1>
+          -->
+
+
+
+
+
+        <img src="{{ url_for('static' , filename='assets/img/h_logo.png') }}" alt="Repair Me">
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+
+
+      </div>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="/">Home</a></li>
+
+
+          {% if current_user.is_authenticated %}
+
+          <li><a href="{{ url_for('account')}}">Account</a></li>
+          <li><a href="{{ url_for('userlogout')}}">Log Out</a></li>
+
+
+          {% else %}
+
+          <li><a href="{{ url_for('signup')}}">Sign Up</a></li>
+          <li><a href="{{ url_for('login')}}">Log In</a></li>
+          {% endif %}
+          <li><a href="{{ url_for('about')}}">About</a>
+
+          </li>
+
+
+
+
+
+
+
+
+
+
+          <li><a href="{{ url_for('contact')  }}">Contact</a></li>
+          <!--
+          <li class="get-started"><a href="/dashboard">Dashboard</a></li>
+          -->
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header>
+
+  <!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container" data-aos="fade-up">
+
+      {% if current_user.is_authenticated %}
+      <a href="#services" class="btn-get-started scrollto ">Book Your Service Now </a>
+      {% else %}
+      <a href="{{url_for('signup')}}" class="btn-get-started scrollto ">Sign Up </a>
+      {% endif %}
+    </div>
+
+
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row justify-content-end">
+          <div class="col-lg-11">
+            <div class="row justify-content-end">
+
+              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                <div class="count-box py-5">
+                  <i class="icofont-simple-smile"></i>
+                  <span data-toggle="counter-up">{{lenght_b}}</span>
+                  <p>Happy Users</p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                <div class="count-box py-5">
+                  <i class="icofont-man-in-glasses"></i>
+                  <span data-toggle="counter-up">30</span>
+                  <p>Verified Experts</p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                <div class="count-box pb-5 pt-0 pt-lg-5">
+                  <i class="icofont-clock-time"></i>
+                  <span data-toggle="counter-up">12</span>
+                  <p>Month of experience</p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                <div class="count-box pb-5 pt-0 pt-lg-5">
+                  <i class="icofont-search-stock"></i>
+                  <span data-toggle="counter-up">{{lenght_s}}</span>
+                  <p>Categories</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+
+          <!--
+          <div class="col-lg-6 video-box align-self-baseline">
+            <img src="{{ url_for('static' , filename='assets/img/logo.jpg') }}" class="img-fluid" alt="">
+            <a href="https://www.youtube.com/watch?v=gsH1-7FHiLU" class="venobox play-btn mb-4" data-vbtype="video"
+              data-autoplay="true"></a>
+          </div>
+           -->
+
+
+
+
+
+
+
+
+
+
+
+
+          <div class="col-lg-12 pt-3 pt-lg-0 content" ">
+            
+              <h3 >We provide online services in Rewa</h3>
+              <p class=" font-italic">
+            We have many expertes in various fields to help you.
+            </p>
+            <ul>
+              <li><i class="bx bx-check-double"></i> Professional experts with latest technologies.</li>
+              <li><i class="bx bx-check-double"></i> Reliabel and very mannerable workers.</li>
+              <li><i class="bx bx-check-double"></i> Lowest price with great values.</li>
+              <li><i class="bx bx-check-double"></i> Pay after services.</li>
+            </ul>
+            <p>
+              We are responsible for any problem.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Cta Section ======= 
+    <section id="cta" class="cta">
+      <div class="container" data-aos="fade-in">
+
+        <div class="text-center">
+          <h3>Join us on whats app</h3>
+          <p> We are hear to solve your problem 24 hours.</p>
+          <a class="cta-btn" href=" https://wa.me/+917470692361?text=Hello!%20my%20name%20is%20..."
+            target="_blank">message</a>
+        </div>
+
+      </div>
+    </section>
+    <!-- End Cta Section -->
+
+
+    <!--#####################################    STICK WHATS APP ICON ###############################-->
+
+    <div class="icon-bar">
+      
+      <a href=" https://wa.me/+917470692361?text=Hello!%20my%20name%20is%20..." class="whatsapp" target="_blank"><i class="fa fa-whatsapp"></i></a>
+      
+      <a href="https://www.facebook.com/REPiarME" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+      
+      
+      <a href="https://www.instagram.com/repair_me_/" class="instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+      
+      <a href="https://www.youtube.com/channel/UCxw7ld-drrdLb1GrG6xdJCQ" class="youtube" target="_blank"><i class="fa fa-youtube"></i></a>
+    
+    </div>
+
+
+
+    <!--###################****************###########    STICK WHATS APP ICON ##########*****************###########-->
+
+
+
+
+
+
+
+
+
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services  section-bg ">
+      <div class="container">
+
+        <div class="section-title pt-5" data-aos="fade-up">
+          <h2>Our Services</h2>
+        </div>
+
+        <div class="row">
+
+
+          {% for service in services %}
+
+
+          <div class="col-md-6">
+
+            <div class="icon-box" data-aos="fade-up">
+              <div class="icon"><i class="las la-{{service.icon}}" style="color: {{service.color}};"></i></div>
+              <h4 class="title"><a href="/service/{{service.slug}}">{{service.title}}</a></h4>
+              <p class="description">{{service.description}}</p>
+            </div>
+          </div>
+
+
+          {% endfor %}
+
+
+
+
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+  </main>
+
+  <!-- End #main -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>Repair Me</h3>
+            <p>Repair Me is a digital platform for local services in Rewa. Repair Me focuses on expert services
+              clustered around Home, Life and Self and where the user need is customized. Using technology and domain
+              intelligence, the platform seeks to understand the user need in detail and matches it to verified service
+              professionals.</p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About us</a></li>
+              <li><a href="/services">Services</a></li>
+              <li><a href="/terms">Terms of service</a></li>
+              <li><a href="/privacy">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              Nipaniya <br>
+              Madhya Pradesh, zip code : 486001<br>
+              India <br>
+              <strong>Phone:</strong> +91-8349050289<br>
+              <strong>Email:</strong> contact@repairmeshop.in<br>
+            </p>
+
+            <div class="social-links">
+              <a href="https://www.facebook.com/REPiarME" class="twitter" target="_blank"><i
+                  class="icofont-facebook"></i></a>
+              <a href="https://www.instagram.com/repair_me_/" class="facebook" target="_blank"><i
+                  class="icofont-instagram"></i></a>
+              <a href=" https://wa.me/+917470692361?text=Hello!%20my%20name%20is%20..." class="instagram"
+                target="_blank"><i class="icofont-whatsapp"></i></a>
+              <a href="https://twitter.com" class="google-plus" target="_blank"><i class="icofont-twitter"></i></a>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Subscribe for latest updates.</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Repair Me</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/serenity-bootstrap-corporate-template/ -->
+        Designed by <a href="https://facebook.com" target="_blank">Shubham Vishwakarma</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static' , filename='assets/vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static' , filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static' , filename='assets/vendor/jquery.easing/jquery.easing.min.js') }}"></script>
+  <script src="{{ url_for('static' , filename='assets/vendor/php-email-form/validate.js') }}"></script>
+  <script src="{{ url_for('static' , filename='assets/vendor/waypoints/jquery.waypoints.min.js') }}"></script>
+  <script src="{{ url_for('static' , filename='assets/vendor/counterup/counterup.min.js') }}"></script>
+  <script src="{{ url_for('static' , filename='assets/vendor/venobox/venobox.min.js') }}"></script>
+  <script src="{{ url_for('static' , filename='assets/vendor/owl.carousel/owl.carousel.min.js') }}"></script>
+  <script src="{{ url_for('static' , filename='assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static' , filename='assets/vendor/aos/aos.js') }}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{ url_for('static' , filename='assets/js/main.js') }}"></script>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

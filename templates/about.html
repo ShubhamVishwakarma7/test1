@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <style >
+    .logoco1{
+      color: white;
+      font-family:'Amita';
+      
+    }
+  </style>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>About</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{ url_for('static' , filename='assets/img/fav.png') }}" rel="icon">
+  <link href="{{ url_for('static' , filename='assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+<link href='https://fonts.googleapis.com/css?family=Amita' rel='stylesheet'>
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static' , filename='assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static' , filename='assets/vendor/icofont/icofont.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static' , filename='assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static' , filename='assets/vendor/venobox/venobox.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static' , filename='assets/vendor/line-awesome/css/line-awesome.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static' , filename='assets/vendor/owl.carousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static' , filename='assets/vendor/aos/aos.css') }}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{ url_for('static' , filename='assets/css/style.css') }}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Serenity - v2.1.0
+  * Template URL: https://bootstrapmade.com/serenity-bootstrap-corporate-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top-1" style="background-color: black;">
+    <div class="container d-flex">
+
+      <div class="logo mr-auto">
+        <h1 class="logoco1" style="color: rgb(60, 228, 60);">Repair Me</h1>
+
+
+
+
+
+        <!-- 
+        <img src="{{ url_for('static' , filename='assets/img/logo.png') }}" alt="" class="img-fluid" >
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+
+
+      </div>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li ><a href="/">Home</a></li>
+          
+
+          {% if current_user.is_authenticated %}
+
+          <li><a href="{{ url_for('account')}}">Account</a></li>
+          <li><a href="{{ url_for('userlogout')}}">Log Out</a></li>
+
+
+          {% else %}
+
+          <li><a href="{{ url_for('signup')}}">Sign Up</a></li>
+          <li><a href="{{ url_for('login')}}">Log In</a></li>
+          {% endif %}
+          
+          <li class="active"><a href="{{ url_for('about')  }}">About</a></li>
+          <li><a href="{{ url_for('contact')  }}">Contact</a></li>
+          <!--
+          <li class="get-started"><a href="/dashboard">Dashboard</a></li>
+          -->
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header>
+  
+  <!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="breadcrumb-hero">
+        <div class="container">
+          <div class="breadcrumb-hero">
+            <h2>About</h2>
+            <p>Repair Me is a  digital platform for local services in Rewa. Repair Me focuses on expert services clustered around Home, Life and Self and where the user need is customized. Using technology and domain intelligence, the platform seeks to understand the user need in detail and matches it to verified service professionals. </p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li>About</li>
+        </ol>
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= About Section ======= -->
+     <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row justify-content-end">
+          <div class="col-lg-11">
+            <div class="row justify-content-end">
+
+              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                <div class="count-box py-5">
+                  <i class="icofont-simple-smile"></i>
+                  <span data-toggle="counter-up">{{lenght_b}}</span>
+                  <p>Happy Users</p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                <div class="count-box py-5">
+                  <i class="icofont-man-in-glasses"></i>
+                  <span data-toggle="counter-up">30</span>
+                  <p>Verified Experts</p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                <div class="count-box pb-5 pt-0 pt-lg-5">
+                  <i class="icofont-clock-time"></i>
+                  <span data-toggle="counter-up">12</span>
+                  <p>Month of experience</p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                <div class="count-box pb-5 pt-0 pt-lg-5">
+                  <i class="icofont-search-stock"></i>
+                  <span data-toggle="counter-up">{{lenght_s}}</span>
+                  <p>Categories</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-6 video-box align-self-baseline">
+            <img src="{{ url_for('static' , filename='assets/img/about.jpg') }}" class="img-fluid" alt="">
+            <a href="https://www.youtube.com/watch?v=gsH1-7FHiLU" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+          </div>
+
+          <div class="col-lg-6 pt-3 pt-lg-0 content">
+            <h3>We are first online services provider in Rewa</h3>
+            <p class="font-italic">
+             We have many expertes in various fields to help you.
+            </p>
+            <ul>
+              <li><i class="bx bx-check-double"></i> professional experts with latest technologies.</li>
+              <li><i class="bx bx-check-double"></i> reliabel and very mannerable workers.</li>
+              <li><i class="bx bx-check-double"></i> lowest price with greatb values.</li>
+              <li><i class="bx bx-check-double"></i> pay after services.</li>
+            </ul>
+            <p>
+             We are responsible  for any problem.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Work Process Section ======= -->
+    <section id="work-process" class="work-process">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Work Process</h2>
+          <p>We provide many type of workers and serviceman in different situations . just call us .</p>
+        </div>
+
+        
+
+        <div class="row content">
+          <div class="col-md-5" data-aos="fade-right">
+            <img src="{{ url_for('static' , filename='assets/img/work-process-1.png') }}" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-4" data-aos="fade-left">
+            <h3>Electricians.</h3>
+            <p class="font-italic">
+              We have best equipped electrian all over district.
+            </p>
+            <ul>
+              <li><i class="icofont-check"></i> certified by Renewa.</li>
+              <li><i class="icofont-check"></i> Realable and expert.</li>
+            </ul>
+          </div>
+        </div>
+
+        
+
+
+
+        <div class="row content">
+          <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
+            <img src="{{ url_for('static' , filename='assets/img/work-process-2.png') }}" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
+            <h3>Plumber</h3>
+            <p class="font-italic">
+              We have best plumbers all over district.
+            </p>
+            <ul>
+              <li><i class="icofont-check"></i> certified by Renewa.</li>
+              <li><i class="icofont-check"></i> Realable and expert.</li>
+            </ul>
+           
+          </div>
+        </div>
+
+        
+
+
+
+        <div class="row content">
+          <div class="col-md-5" data-aos="fade-right">
+            <img src="{{ url_for('static' , filename='assets/img/work-process-3.png') }}" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-5" data-aos="fade-left">
+            <h3>Workers</h3>
+            <p>We provide best workers for construction & home sides.</p>
+            <ul>
+              <li><i class="icofont-check"></i> Well trained.</li>
+              <li><i class="icofont-check"></i> Honest.</li>
+              <li><i class="icofont-check"></i> Hard Working.</li>
+            </ul>
+          </div>
+        </div>
+
+        
+
+
+
+
+        <div class="row content">
+          <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
+            <img src="{{ url_for('static' , filename='assets/img/work-process-4.png') }}" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
+            <h3>AC Repair</h3>
+            <p class="font-italic">
+              We have best AC repairing mechanics.
+            </p>
+            <ul>
+              <li><i class="icofont-check"></i> Well trained.</li>
+              <li><i class="icofont-check"></i> Honest.</li>
+              <li><i class="icofont-check"></i> Hard Working.</li>
+            </ul>
+            
+          </div>
+        </div>
+
+      
+
+
+
+      </div>
+    </section><!-- End Work Process Section -->
+
+    <!-- ======= Our Skills Section ======= -->
+   <!-- End Our Skills Section -->
+
+    
+
+
+
+    <!-- ======= Our Clients Section ======= 
+
+
+
+
+    <section id="clients" class="clients">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Our Clients</h2>
+          
+        </div>
+
+        <div class="owl-carousel clients-carousel" data-aos="fade-up">
+          <img src="{{ url_for('static' , filename='assets/img/clients/client-1.png') }}" alt="">
+          <img src="{{ url_for('static' , filename='assets/img/clients/client-2.png') }}" alt="">
+          <img src="{{ url_for('static' , filename='assets/img/clients/client-3.png') }}" alt="">
+          <img src="{{ url_for('static' , filename='assets/img/clients/client-4.png') }}" alt="">
+          <img src="{{ url_for('static' , filename='assets/img/clients/client-5.png') }}" alt="">
+          <img src="{{ url_for('static' , filename='assets/img/clients/client-6.png') }}" alt="">
+          <img src="{{ url_for('static' , filename='assets/img/clients/client-7.png') }}" alt="">
+          <img src="{{ url_for('static' , filename='assets/img/clients/client-8.png') }}" alt="">
+        </div>
+
+      </div>
+    </section><!-- End Our Clients Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+   <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>FixallNow</h3>
+            <p>FixallNow is a  digital platform for local services in Rewa. FixallNow focuses on expert services clustered around Home, Life and Self and where the user need is customized. Using technology and domain intelligence, the platform seeks to understand the user need in detail and matches it to verified service professionals.</p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About us</a></li>
+              <li><a href="/services">Services</a></li>
+              <li><a href="/terms">Terms of service</a></li>
+              <li><a href="/privacy">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              Nipaniya <br>
+              Madhya Pradesh, zip code : 486001<br>
+              India <br>
+              <strong>Phone:</strong> +91-8349050289<br>
+              <strong>Email:</strong> contact@repairmeshop.in<br>
+            </p>
+
+            <div class="social-links">
+              <a href="https://m.facebook.com/FixallNow-107195324463074/" class="twitter" target="_blank"><i class="icofont-facebook"></i></a>
+              <a href="https://instagram.com" class="facebook" target="_blank"><i class="icofont-instagram"></i></a>
+              <a href=" https://wa.me/+917470692361?text=Hello!%20my%20name%20is%20..." class="instagram" target="_blank"><i class="icofont-whatsapp"></i></a>
+              <a href="https://twitter.com" class="google-plus" target="_blank"><i class="icofont-twitter"></i></a>
+
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Subscribe for latest updates.</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>FixallNow</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/serenity-bootstrap-corporate-template/ -->
+        Designed by <a href="https://facebook.com" target="_blank">Shubham Vishwakarma</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static' , filename='assets/vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static' , filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static' , filename='assets/vendor/jquery.easing/jquery.easing.min.js') }}"></script>
+  <script src="{{ url_for('static' , filename='assets/vendor/php-email-form/validate.js') }}"></script>
+  <script src="{{ url_for('static' , filename='assets/vendor/waypoints/jquery.waypoints.min.js') }}"></script>
+  <script src="{{ url_for('static' , filename='assets/vendor/counterup/counterup.min.js') }}"></script>
+  <script src="{{ url_for('static' , filename='assets/vendor/venobox/venobox.min.js') }}"></script>
+  <script src="{{ url_for('static' , filename='assets/vendor/owl.carousel/owl.carousel.min.js') }}"></script>
+  <script src="{{ url_for('static' , filename='assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static' , filename='assets/vendor/aos/aos.js') }}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{ url_for('static' , filename='assets/js/main.js') }}"></script>
+
+</body>
+
+</html>
